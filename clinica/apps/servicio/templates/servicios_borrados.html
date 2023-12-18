@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>Servicios Borrados</h1>
+  {% if servicios %}
+    <ul>
+      {% for servicio in servicios %}
+        <li>{{ servicio.nombre }} - ${{ servicio.precio }}</li>
+        <form action="{% url 'servicio:activar_servicio' servicio.id %}" method="post">
+          {% csrf_token %}
+          <button class="borrar" type="submit">Activar</button>
+        </form>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay servicios borrados</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,104 @@
+
+html {
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F9Fafc;
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+    margin: 0;
+  }
+  
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+ 
+
+  .div_block {
+    text-align: start;
+    background-image: url("img/preview.jpg");
+    width: 1200px;
+    height: 645px;
+    color: #F9Fafc;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+  
+
+  header{
+    background-color: rgb(0, 174, 255);
+    width: 100%;
+    padding: 15px;
+  }
+  #navegador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+    #navegador li {
+      padding: 10px;
+    }
+    #navegador li:hover {
+      background-color: #0dd3f1;
+      transition: .5s ease;
+    }
+  .lista-nav {
+    margin: 0 10px;
+  }
+  
+
+  #footer {
+    text-align: center;
+    padding: 15px;
+
+    background-color: #696767;
+    width: 100%;
+  }
+
+  .borrar{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 120px;
+  color: white;
+  background-color: rgb(0, 174, 255);
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 40px;
+  }
+  .borrar:hover{
+    background-color: #0dd3f1;
+    transition: .5s ease;
+  }
+
+  .profesional-boton{
+    margin-right: 10px;
+    padding: 15px;
+    background-color:  rgb(0, 174, 255);
+    border-radius: 30px;
+    font-size: 12px;
+  }
+  .profesional-boton:hover{
+    background-color: #0dd3f1;
+    transition: .5s ease;
+  }
+
+ .caja{
+  background-color: red;
+  width: 400px;
+ }

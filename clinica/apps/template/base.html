@@ -1,0 +1,48 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/style_base.css"%}'>
+
+
+    <title> {% block title%}Clinica Niño Jesus{% endblock %} </title>
+</head>
+
+<header>
+    <nav class="nav">
+        <ul id= 'navegador'>
+            <li class="lista-nav"><a href="{% url 'profesional:lista_profesionales' %}" >Profesional</a></li>
+            <li class="lista-nav"><a href="{% url 'servicio:lista_servicios' %}">Servicios</a></li>
+            <li class="lista-nav nav-inicio"><a href="{% url 'accounts:login' %}">Iniciar sersión</a></li>
+            <li class="lista-nav nav-cerrar"><a href="{% url 'accounts:logout' %}">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+</header>
+<body id="body">
+
+    <div class="div_block">
+        {% block content %}
+        <h1>Bienvenido a Clinica Niño Jesus </h1>
+        <p>Poné tu salud en nuestras manos.</p>
+        {% endblock %}
+    </div>
+    <footer id="footer">
+        <div class="footer-item">
+            <p>En clinica Niño Jesus Te cobramos Caro y te ponemos a disposición de Dios santisimo</p>
+            
+        </div>
+    </footer>
+
+    
+</body>
+</html>

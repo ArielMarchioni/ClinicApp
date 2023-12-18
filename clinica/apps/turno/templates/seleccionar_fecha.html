@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Seleccionar fecha{% endblock %}
+
+{% block content %}
+  <h1>Seleccionar fecha</h1>
+  <ul>
+    {% for fecha in fechas %}
+    <li><a href="{% url 'turno:seleccionar_horario' fecha_id=fecha.id profesionalservicio_id=profesionalservicio.id %}">{{ fecha.fecha }}</a></li>
+    {% endfor %}
+  
+  </ul>
+  {% if not fechas_generadas %}
+    <a class="borrar" href="{% url 'turno:generar_fechas' %}">Generar Fechas</a>
+  {% endif %}
+{% endblock %}

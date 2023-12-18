@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Seleccionar horario{% endblock %}
+
+{% block content %}
+  <h1>Seleccionar horario</h1>
+  <h2>Fecha seleccionada: {{ fecha.fecha }}</h2>
+  <ul>
+    {% for horario in horarios %}
+      <li>
+        <form method="POST" action="{% url 'turno:confirmar_turno' fecha_id=fecha.id horario_id=horario.id profesionalservicio_id=profesionalservicio.id %}">
+        
+          {% csrf_token %}
+          <input type="hidden" name="fecha_id" value="{{ fecha.id }}">
+          <input type="hidden" name="horario_id" value="{{ horario.id }}">
+          <input type="hidden" name="profesionalservicio_id" value="{{ profesionalservicio.id }}">
+          <button class="borrar" type="submit">{{ horario.horario }}</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
