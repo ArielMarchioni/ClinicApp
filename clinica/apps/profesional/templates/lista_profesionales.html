@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Clinica{% endblock %}
+
+{% block content %}
+
+{% if profesionales %}
+  <h1>Profesionales Disponibles</h1>
+  <p>Seleccione un Profesional</p>
+  <ul>
+    {% for profesional in profesionales %}
+      {% if not profesional.is_deleted %}
+        <li><a href="{% url 'profesionalservicio:lista_servicios_profesionales' profesional.id %}">{{ profesional.nombre }} {{ profesional.apellido }}</a></li>
+        <form method="post" action="{% url 'profesional:borrar_profesional' profesional.id%}">
+            {%csrf_token%}
+            <button class="borrar" type="sumbit">borrar</button>
+        </form>
+      {% else %}
+        <p>No hay profesionales</p>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No hay profesionales</p>
+{% endif %}
+
+<a class="profesional-boton" href="{% url 'profesional:crear_profesional' %}"> Nuevo Profesional</a>
+<a class="profesional-boton" href="{% url 'profesional:profesionales_borrados' %}">Reactivar Profesional</a>
+
+{% endblock %}

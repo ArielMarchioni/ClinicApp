@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Servicios del profesional</h1>
+
+  {% if profesional_servicios %}
+    <ul>
+      {% for ps in profesional_servicios %}
+        <li>
+          <a href="{% url 'turno:seleccionar_fecha' servicio_id=ps.servicio.id profesionalservicio_id=ps.id %}">
+            {{ ps.servicio.nombre }} - {{ ps.servicio.precio }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay servicios disponibles</p>
+  {% endif %}
+
+  {% if profesional_servicios %}
+    <a class="profesional-boton" href="{{ vincular_url }}">Vincular nuevo servicio</a>
+  {% else %}
+    <a class="profesional-boton" href="{{ vincular_url }}">Vincular nuevo servicio</a>
+  {% endif %}
+{% endblock %}
